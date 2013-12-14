@@ -1,4 +1,165 @@
-%h2
-  Hello, world e
-.main-text
-  Some text
+:javascript
+  $(function() {
+      $('.nav-wrapper').height($("#nav").height());
+      
+    
+      $('#nav').affix({
+          offset: { top: $('#nav').offset().top }
+      });
+   
+  });
+  
+  $(window).load(function() {
+    $('#collaboration-cycle').orbit();
+  });
+
+:css
+  .container.issues .row .col-sm-4{
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+  
+  .idea {
+    background: red;
+  }
+  
+  .prototype {
+    background: green;
+  }
+
+
+.container.issues
+  .row
+    .col-sm-4
+      .main-text
+        Masz problem z prezentem. Chciałbyś komuś zrobić nietypowy prezent?
+        .btn.btn-primary
+          guzik
+    .col-sm-4
+      .main-text
+        Jesteś dekoratorem wnętrz z wieloma fajnymi pomysłami, ale nie masz zaplecza do ich realizacji?
+        .btn.btn-primary
+          guzik
+    .col-sm-4
+      .main-text
+        Urwałeś element motocykla lub roweru, albo chcesz dorobić większy, lżejszy, lepszy i bardziej pro?
+        .btn.btn-primary
+          guzik
+  .row
+    .col-sm-4
+      .main-text
+        Chcesz wyposażyć swój lokal w innowacyjną dekorację? Chcesz zrobić mebel jedyny w swoim rodzaju? Podświetlany, na pilota?
+        
+        .btn.btn-primary
+          guzik
+    .col-sm-4
+      .main-text
+        Chciałbyś fajne elektroniczne cudo, co świeci i buczy i ma kolorowe przyciski i wyświetlacz ciekłokrystaliczny?
+        .btn.btn-primary
+          guzik
+    .col-sm-4
+      .main-text
+        Chciałbyś, aby każdy produkt w Twoim sklepie miał fotografię 3d?
+        .btn.btn-primary
+          guzik
+
+.container.call_for_action
+  .row
+    .col-xs-12
+  
+      %h1 To miejsce dla Ciebie!
+      
+      .row
+        .col-md-4
+          %p 
+            Mamy otwarte umysły, zwinne rączki i dostęp do wielu urządzeń, które potrafią jeszcze więcej.
+
+        .col-md-4
+          %p
+            Zaprojektuj coś. Dostarcz nam wraz z opisem projekt swojego cośka. Pomożemy w dopracowaniu i realizacji Twojego projektu. 
+        .col-md-4
+          %p
+            Frezujemy i grawerujemy metale, tniemy i skręcamy blachy, drukujemy plastik oraz wyginamy szkło i czasoprzestrzeń.
+    
+.container.process_cycle
+  .row
+    .col-xs-12
+      %h3
+        Preferowany cykl współpracy. 
+  .row
+    .col-xs-12
+  
+      #collaboration-cycle
+        = img("/images/captions.jpg", :alt => "Obrazek")
+        = img("/images/features.jpg", :alt => "Obrazek")
+        = img("/images/coffee.jpg", :alt => "Obrazek")
+        = img("/images/overflow.jpg", :alt => "Obrazek")
+    
+.container.technologies
+  .row
+    .col-xs-12
+      %h3
+        Frezowanie CNC
+      %p
+        Posiadamy frezarkę CNC, zaawansowany sprzęt radzący sobie z obróbką materiałów o wymiarach do 600x380mm, a przy odpowiedniej gimnastyce nawet większych. 
+        Frezujemy i grawerujemy w stali, aluminium, drewnie, plexi i wielu innych materiałach. 
+    
+  .row
+    .col-xs-12
+      %h3
+        Toczenie
+      %p
+        Poza toczeniem bitew, czym ciekawym się zająć potrafimy też toczyć przy użyciu tokarki do metalu. Przelot 35mm, maksymalna średnica 250mm, długość elementu 500mm.  
+
+  .row
+    .col-xs-12
+      %h3
+        Drukowanie 3D 
+      %p
+        Drukujemy filamentem ABS i PLA. Różne kolory. 
+
+  .row
+    .col-xs-12
+      %h3
+        Obróbka szkła 
+      %p
+        Wykonywana przez wykwalifikowaną kadrę Akademii sztuki we Wrocławiu. Proszę tylko spojrzeć na te ciekawe kształty i kolory. 
+
+  .row
+    .col-xs-12
+      %h3
+        Skanowanie 3d
+      %p
+        Element nie może być większy niż 300x300x300cm. 
+
+  .row
+    .col-xs-12
+      %h3
+        Fotografia 3d
+      %p
+        Posiadamy sprzęt niezbędny do fotografowania produktów w 360. 
+        Możemy sfotografować każdy produkt o wymiarach od mikro do rzędu metr x metr x 2 metry. Nawet Twoją ciocię. 
+
+        https://github.com/peachananr/interactive_3d
+
+  .row
+    .col-xs-12
+      %h3
+        Inteligentne domy
+      %p
+        Załoga złożona z geeków i fanów Arduino chętnie oplącze Twój dom siatką sensorów i aktorów, które mogą Ci na czas zrobić kawę, albo włączyć pralkę. 
+
+  .row
+    .col-xs-12
+      %h3
+        Elementy automatyki
+      %p
+        Sterowniki silników krokowych i serw nie są dla nas żadną tajemnicą. Składamy sterowniki frezarki numerycznej, to i ze sliderem do Twojego aparatu fotograficznego też sobie poradzimy. 
+
+    
+    
+    
+
+
+ 
+

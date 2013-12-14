@@ -1,0 +1,21 @@
+!!! Strict
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/    
+    %title
+      Prototypuje.my - materializuj swoje pomysły!
+    = css :master
+    = js :master
+    
+    - fonts = ['Open+Sans:400,600,700', 'Lobster+Two', 'Droid+Serif:400,400italic']
+    
+    - fonts.each do |font|
+      %link{:href=>"//fonts.googleapis.com/css?family=#{font}",:rel=>"stylesheet",:type=>"text/css"}
+    
+  %body
+    = haml :_header, layout: false
+  
+    #main_content
+      = yield
+    
