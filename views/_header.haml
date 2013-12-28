@@ -1,70 +1,64 @@
-:css
-  #header-badge {
-    width: 250px;
-    height: 300px;
-    background: #ff0000;
-    color: white;
-    text-align: center;
-  }
-  
-  .header {
-    background-image:url('/images/coffee.jpg');
-  }
-  
-  #header-badge, 
-  #header-badge a {
-    font-family: "Lobster Two", cursive;
-    color: #ffffff;
-  }
-  
-  .container.header {
-    height: 400px;
-  }
-  
-  #nav{
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.298);
-    border-bottom: 1px solid #000000;
-    height: 80px;
-    margin-bottom: 15px;
-  }
-  
-  #nav.affix {
-      position: fixed;
-      top: 0;
-      width: 100%
-  }
 
-  #nav > .navbar-inner {
-      border-left: 0;
-      border-right: 0;
-      border-radius: 0;
-      -webkit-border-radius: 0;
-      -moz-border-radius: 0;
-      -o-border-radius: 0;
-  }
-  
-  .nav-wrapper {
-  }
+.top
+  %header
+    .container
+      .row
+        .col-md-6
+          .logo
+            %h1
+              %a
+                Prototypujemy
+        .navigation.pull-right
+          %a
+            Start
+          %a 
+            Features
+          %a
+            Contact
 
 
-.container.header
-  .row
-    .col-md-12
-      #header-badge
-        .logo
-          %h2
-            %a
-              Prototypuje.my
-        %p
-          Zmaterializuj swoje pomysły!
-        
-.container.nav-wrapper
-  #nav.navbar
-    .navbar-inner
-      .navigation
-        %a
-          Start
-        %a
-          Kontakt
-            
+  .hero
+    .container
+      .row
+        .col-md8
+          .intro
+            %h2
+              Idea
+              %span.tblue
+                \.
+              Draft
+              %span.tblue
+                \.
+              Prototype
+              %span.tblue
+                \.
+                
+            %p
+              Only 
+              %span.tblue 
+                materialized ideas
+              carry value
+              %span.tblue
+                \.
+              
+            %p
+              Unusual things we handle in stock
+              %span.tblue
+                \.
+              
+            %p
+              Miracles take a little more time
+              %span.tblue
+                \.
+                
+            .applinks
+              %a
+                %i.icon-android
+              %a
+                %i.icon-apple
+              %a
+                %i.icon-windows
+                
+              
+              
+              

@@ -2,7 +2,6 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/assetpack'
 
-
 class App < Sinatra::Base
   set :root, File.dirname(__FILE__) 
 
@@ -45,7 +44,14 @@ class App < Sinatra::Base
   set :haml, layout: :_layout # Default layout.
 
   get '/' do 
-    haml(:index)
+    get_locale == 'pl' ? haml(:index_pl, layout: :_layout_pl) : haml(:index, layout: :_layout) 
+  end
+  
+  helpers do
+    def get_locale
+      # Pulls the browser's language
+      @env["HTTP_ACCEPT_LANGUAGE"][0,2]
+    end
   end
 end
 
