@@ -5,10 +5,15 @@ gem 'sinatra-assetpack'
 gem 'sinatra-content-for2'
 gem 'haml'
 gem 'mongo'
-gem 'thin'
-gem 'rerun'
 gem 'nokogiri', '1.5.9'
 
+gem 'capistrano'
+gem 'rvm-capistrano'
+
+group :development do
+  gem 'thin'
+  gem 'rerun'  
+end
 
 group :test do
   gem 'cucumber'
