@@ -47,6 +47,11 @@ class App < Sinatra::Base
     get_locale == 'pl' ? haml(:index_pl, layout: :_layout_pl) : haml(:index, layout: :_layout) 
   end
   
+  get '/contact/?' do 
+    get_locale == 'pl' ? haml(:contact_pl, layout: :_layout_pl) : haml(:contact, layout: :_layout) 
+  end
+  
+  
   helpers do
     def get_locale
       # Pulls the browser's language
