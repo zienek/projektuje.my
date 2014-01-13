@@ -9,7 +9,7 @@ set :rack_env, :production
 
 #general info
 set :user, 'root'
-set :domain, 'www.prototypujemy.pl'
+set :domain, 'prototypujemy.pl'
 set :applicationdir, "/root/dev/prototypujemy"
 set :scm, :git 
 set :application, "app"
@@ -22,8 +22,7 @@ set :scm_verbose, true
 set :deploy_via, :export
 set :deploy_to, applicationdir 
 
-set :application, "prototypujemy"
-
+set :host, "#{user}@#{domain}"
 
 role :web, domain
 role :app, domain
