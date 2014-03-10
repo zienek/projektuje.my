@@ -51,6 +51,13 @@ class App < Sinatra::Base
     get_locale == 'pl' ? haml(:contact_pl, layout: :_layout_pl) : haml(:contact, layout: :_layout) 
   end
   
+  get '/technology/?' do
+    get_locale == 'pl' ? haml(:technology_pl, layout: :_layout_pl) : haml(:technology, layout: :_layout) 
+  end
+  
+  get '/portfolio/?' do
+    get_locale == 'pl' ? haml(:portfolio_pl, layout: :_layout_pl) : haml(:portfolio, layout: :_layout) 
+  end
   
   helpers do
     def get_locale

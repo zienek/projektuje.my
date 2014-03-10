@@ -1,45 +1,36 @@
-require 'rvm/capistrano'
-require 'bundler/capistrano'
+set :application, "Prototypujemy.pl"
+set :repository,  "git@github.com:zienek/projektuje.my.git"
 
-#RVM and bundler settings
-set :bundle_cmd, "/usr/local/rvm/gems/ruby-2.0.0-p353/gems/bundler-1.5.2/bin/bundle"
-set :bundle_dir, "/usr/local/rvm/gems/ruby-2.0.0-p353/gems/"
-#set :rvm_ruby_string, :local
-set :rack_env, :production
+set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 
-#general info
+set :domain, "prototypujemy.pl"
+
 set :user, 'root'
-set :use_sudo, false
-set :domain, 'prototypujemy.pl'
 set :applicationdir, "/root/dev/prototypujemy"
-set :application, "app"
 
-set :scm, :git 
-set :repository,  "git@github.com/zienek/projektuje.my.git"
-set :branch, 'master'
-set :git_shallow_clone, 1
-set :scm_verbose, true
-
-set :deploy_via, :remote_cache
-#set :deploy_via, :export
-set :deploy_to, applicationdir 
-
-#set :host, "#{user}@#{domain}"
-
-role :web, domain
+role :web, domain                          # Your HTTP server, Apache/etc
 role :app, domain
+# may be the same as your `Web` server
 role :db,  domain, :primary => true # This is where Rails migrations will run
 
-# ssh_options[:forward_agent] = true
-# ssh_options[:keys] = [File.join('/root/', ".ssh", "id_rsa")]
-# ssh_options[:paranoid] = false
-# default_run_options[:pty] = true
 
-# after "deploy:cold" do
-#   admin.nginx_restart
-# end
+set :deploy_to, applicationdir
+set :deploy_via, :export
 
+ssh_options[:forward_agent] = true
+ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "prototypujemy_root_rsa")]
+ssh_options[:paranoid] = false
+default_run_options[:pty] = true
 
+after "deploy:cold" do
+  admin.nginx_restart
+end
+
+namespace :deploy do
+  desc "Not starting as we're running passenger."
+  task :start do
+  end
+end
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
@@ -47,10 +38,10 @@ role :db,  domain, :primary => true # This is where Rails migrations will run
 # these http://github.com/rails/irs_process_scripts
 
 # If you are using Passenger mod_rails uncomment this:
-namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
- end
+# namespace :deploy do
+#   task :start do ; end
+#   task :stop do ; end
+#   task :restart, :roles => :app, :except => { :no_release => true } do
+#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#   end
+# end

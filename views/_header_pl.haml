@@ -3,15 +3,17 @@
   %header
     .container
       .row
-        .col-md-6
+        .col-md-5
           .logo
             %h1
               %a
                 Prototypujemy
         .navigation.pull-right
-          %a
+          %a{href: "/"}
             Start
-          %a 
+          %a{href: "/portfolio"}
+            Zrealizowaliśmy
+          %a{href: "/technology"}
             Możliwości
           %a{href: "/contact"}
             Kontakt
@@ -50,14 +52,16 @@
               Cuda wymagają nieco więcej czasu
               %span.tblue
                 \.
-                
-            .applinks
-              %a
-                %i.icon-android
-              %a
-                %i.icon-apple
-              %a
-                %i.icon-windows
+            
+            .applink
+            
+            / .applinks
+            /   %a
+            /     %i.icon-android
+            /   %a
+            /     %i.icon-apple
+            /   %a
+            /     %i.icon-windows
                 
               
               

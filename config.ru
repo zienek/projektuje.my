@@ -10,6 +10,4 @@ set :root,        root_dir
 set :app_file,    app_file
 disable :run
 
-map "/" do
-  run App
-end
+run App
