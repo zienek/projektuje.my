@@ -21,8 +21,14 @@ class App < Sinatra::Base
       "/stylesheets/style.css",
       # "/stylesheets/demo-style.css"
     ]
+    
+    gallery_css = [
+      "/stylesheets/blueimp-gallery.min.css",
+      "/stylesheets/bootstrap-image-gallery.css"
+    ]
 
     css :master, '/stylesheets/master.css', master_css
+    css :gallery, '/stylesheets/gallery.css', gallery_css
     
     master_js = [
       "/javascripts/html5shiv.js",
@@ -32,8 +38,14 @@ class App < Sinatra::Base
       "/javascripts/respond.min.js"
     ]
     
+    gallery_js = [
+      "/javascripts/jquery.blueimp-gallery.min.js",
+      "/javascripts/bootstrap-image-gallery.min.js"
+    ]
+    
     js :master, '/javascripts/master.js', master_js
     
+    js :gallery, '/javascripts/gallery.js', gallery_js
     
     js_compression  :uglify 
     css_compression :sass

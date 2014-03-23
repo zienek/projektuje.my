@@ -1,11 +1,67 @@
+= css :gallery
 .container.portfolio
   .row
     .col-xs-12
       %h2
-        Frezarka CNC
-      %h3
-        Parametry
-      %table
-        
+        Zawiesia do ławki rowerowej
+      .row
+        .col-xs-6
+          %h3
+            Parametry
+          %table.table
+            %tr
+              %td
+                Materiał
+              %td
+                Stal nierdzewna
+            %tr
+              %td
+                Szerokość
+              %td
+                40mm
+            %tr
+              %td
+                Wysokość 
+              %td
+                60mm
+            %tr
+              %td
+                Grubość blachy
+              %td
+                1,5 mm
+            %tr
+              %td
+                Użyte technologie
+              %td
+                Wycinanie laserowe, gięcie, sziełkowanie
+            %tr
+              %td
+                Wykończenie materiału
+              %td
+                Szkiełkowanie
+        .col-xs-6
+          %h3
+            Galeria
+          = haml :_gallery, layout: false
+          #links
+            %a{"data-gallery" => "", href: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_768_1.jpg", title: "Bike handler"}
+              %img{alt: "Bike handler", src: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_thumbs_1.jpg"}/
+            %a{"data-gallery" => "", href: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_768_2.jpg", title: "Bike handler"}
+              %img{alt: "Bike handler", src: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_thumbs_2.jpg"}/
+            %a{"data-gallery" => "", href: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_768_3.jpg", title: "Bike handler"}
+              %img{alt: "Bike handler", src: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_thumbs_3.jpg"}/
+            %a{"data-gallery" => "", href: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_768_4.jpg", title: "Bike handler"}
+              %img{alt: "Bike handler", src: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_thumbs_4.jpg"}/
+            %a{"data-gallery" => "", href: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_768_5.jpg", title: "Bike handler"}
+              %img{alt: "Bike handler", src: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_thumbs_5.jpg"}/
+            %a{"data-gallery" => "", href: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_768_6.jpg", title: "Bike handler"}
+              %img{alt: "Bike handler", src: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_thumbs_6.jpg"}/
+            %a{"data-gallery" => "", href: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_768_7.jpg", title: "Bike handler"}
+              %img{alt: "Bike handler", src: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_thumbs_7.jpg"}/
+            %a{"data-gallery" => "", href: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_768_8.jpg", title: "Bike handler"}
+              %img{alt: "Bike handler", src: "images/portfolio/14-03_bike_seat_hinges/14-03-03_bike_seat_hinges_thumbs_8.jpg"}/
+          
+          
+= js :gallery
         
         
